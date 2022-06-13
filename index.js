@@ -1,22 +1,35 @@
-var canvas;
-var canvasContext;
-var ballY = 0;
+
 
 window.onload = function () {
     console.log("Happy Gaming!");
     canvas = document.getElementById("gameCanvas");
     canvasContext = canvas.getContext("2d");
-    setInterval( drawEverything, 1000);
+    framesPerSecond = 30;
+    setInterval( function () {
+        drawEverything();
+        moveEverything();
+    }, 1000/framesPerSecond);
 
 }
 
+var canvas;
+var canvasContext;
+var ballY = 600/2;
+var ballX = 10;
+var ballSpeedX = 10;
+
+function moveEverything() {
+    ballX = ballX + ballSpeedX;
+    // ballSpeedX += 10;
+}
 
 function drawEverything() {
-
-    ballY = ballY + 10;
-
     canvasContext.fillStyle = "black";
     canvasContext.fillRect(0,0, canvas.width, canvas.height);
+    canvasContext.fillStyle = "white";
+    canvasContext.fillRect(0, 250,10, 100)
     canvasContext.fillStyle = "green";
-    canvasContext.fillRect(canvas.width/2, ballY, 20, 20);
+    canvasContext.fillRect(ballX, ballY, 20, 20);
+    canvasContext.fillStyle = "white";
+    canvasContext.fillRect(790, 250,10, 100)
 }
