@@ -38,10 +38,13 @@ function drawEverything() {
     canvasContext.fillRect(0,0, canvas.width, canvas.height);
     canvasContext.fillStyle = "white";
     canvasContext.fillRect(0, 250,10, 100)
-    canvasContext.fillStyle = "green";
-    canvasContext.fillRect(ballX, ballY, 20, 20);
+    // canvasContext.fillStyle = "green";
+    // canvasContext.fillRect(ballX, ballY, 20, 20);
+    canvasContext.beginPath();
+    canvasContext.arc(ballX, ballY, 10, 0, Math.PI*2, true);
+    canvasContext.fill();
+
     canvasContext.fillStyle = "white";
-    canvasContext.fillRect(790, 250,10, 100)
+    canvasContext.fillRect(790, 250,10, 100);
 }
 
-function colorRect 
