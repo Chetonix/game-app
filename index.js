@@ -23,14 +23,14 @@ function moveEverything() {
     // ballSpeedX += 10;
     if(ballX > 770) {
         ballSpeedX = -ballSpeedX;
-        // hasBounced = true;
+        hasBounced = true;
     }
-    // if (hasBounced) {
-    //     if(ballX > 0) {
-    //         ballSpeedX = -ballSpeedX;
-    //     }
-        
-    // }
+
+    if(ballX < 20) {
+        if(hasBounced) {
+            ballSpeedX = -ballSpeedX;
+        }
+    }
 }
 
 function drawEverything() {
@@ -43,3 +43,5 @@ function drawEverything() {
     canvasContext.fillStyle = "white";
     canvasContext.fillRect(790, 250,10, 100)
 }
+
+function colorRect 
