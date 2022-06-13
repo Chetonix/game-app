@@ -17,10 +17,20 @@ var canvasContext;
 var ballY = 600/2;
 var ballX = 10;
 var ballSpeedX = 10;
-
+var hasBounced = false;
 function moveEverything() {
     ballX = ballX + ballSpeedX;
     // ballSpeedX += 10;
+    if(ballX > 770) {
+        ballSpeedX = -ballSpeedX;
+        // hasBounced = true;
+    }
+    // if (hasBounced) {
+    //     if(ballX > 0) {
+    //         ballSpeedX = -ballSpeedX;
+    //     }
+        
+    // }
 }
 
 function drawEverything() {
